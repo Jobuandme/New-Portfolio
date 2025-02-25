@@ -1,63 +1,91 @@
 <!DOCTYPE html>
-<html lang="eng-ca">
-    <script>
-    function transformScroll(event) {
-    if (!event.deltaY) {
-      return;
+<html lang="en-ca">
+<head>
+  <meta charset="UTF-8">
+  <title>Michael Gvozdek's Portfolio</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
     }
 
-    event.currentTarget.scrollLeft += event.deltaY + event.deltaX;
-    event.preventDefault();
+    body {
+      scrollbar-width: none; /* Firefox */
+    }
+
+    body::-webkit-scrollbar {
+      display: none; /* Chrome, Safari */
+    }
+
+    .back {
+      background-color: #1e1f1e;
+      height: 60em;
+      width: 600%;
+      display: flex;
+    }
+
+    .silhouette1 {
+      position: absolute;
+      width: 1000px;
+      height: 100%;
+      aspect-ratio: 1-1;
+      background-color: red;
+    }
+    
+    .silhouette2 {
+      position: absolute;
+      width: 1000px;
+      height: 100%;
+      aspect-ratio: 1-1;
+      background-color: green;
+      left: -150px;
+    }
+    
+    .silhouette3 {
+      position: absolute;
+      width: 1000px;
+      height: 100%;
+      aspect-ratio: 1-1;
+      background-color: blue;
+      left: -300px;
+    }
+    .silhouette4 {
+      position: absolute;
+      width: 1000px;
+      height: 100%;
+      aspect-ratio: 1-1;
+      background-color: purple;
+      left: -450px;
+    }
+    .silhouette5 {
+      position: absolute;
+      width: 1000px;
+      height: 100%;
+      aspect-ratio: 1-1;
+      background-color: lightgreen;
+      left: -600px;
+    }
+  </style>
+</head>
+<body class="back">
+  <div class="silhouette1"></div>
+  <div class="silhouette2"></div>
+  <div class="silhouette3"></div>
+  <div class="silhouette4"></div>
+  <div class="silhouette5"></div>
+
+  <script>
+    function transformScroll(event) {
+      if (!event.deltaY) {
+        return;
+      }
+      event.currentTarget.scrollLeft += event.deltaY + event.deltaX;
+      event.preventDefault();
     }
 
     const element = document.scrollingElement || document.documentElement;
     element.addEventListener('wheel', transformScroll);
   </script>
-<head>
-  <meta charset="utc-8">
-    <title>Michael Gvozdek's Portfolio</title>
-<style>
-
-  
-  .back {
-    background-color: #1e1f1e;
-    height: 1000px;
-    width: 8000px; 
-    display: flex;
-
-  }
-  
-.testA {
-  width: 500px;
-  height: 100%;
-  background: red;
-  transition: width 0.5s;
-}
-
-.testA:hover {
-  width: 300px;
-  height: 100%;
-}
-  
-.testB {
-  width: 500px;
-  height: 100%;
-  background: green;
-  transition: width 0.5s;
-}
-
-.testB:hover {
-  width: 300px;
-  height: 100%;
-}
-  </style>
-  <body class="back">
-    <div class="testA">
-    </div>
-    <div class="testB">
-    </div>
-
-  </body>
-  
-  </head>
+</body>
 </html>
