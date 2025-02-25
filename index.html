@@ -10,14 +10,6 @@
       overflow: hidden;
     }
 
-    body {
-      scrollbar-width: none; /* Firefox */
-    }
-
-    body::-webkit-scrollbar {
-      display: none; /* Chrome, Safari */
-    }
-
     .back {
       background-color: #1e1f1e;
       height: 60em;
@@ -25,55 +17,57 @@
       display: flex;
     }
 
-    .silhouette1 {
-      position: absolute;
-      width: 1000px;
-      height: 100%;
-      aspect-ratio: 1-1;
-      background-color: red;
+    .silhouetteContainer {
+      width: 6000px;
+      display: flex;     
+      position: relative; 
+
     }
-    
-    .silhouette2 {
-      position: absolute;
-      width: 1000px;
-      height: 100%;
-      aspect-ratio: 1-1;
-      background-color: green;
-      left: -150px;
-    }
-    
-    .silhouette3 {
-      position: absolute;
-      width: 1000px;
-      height: 100%;
-      aspect-ratio: 1-1;
-      background-color: blue;
-      left: -300px;
-    }
-    .silhouette4 {
-      position: absolute;
-      width: 1000px;
-      height: 100%;
-      aspect-ratio: 1-1;
-      background-color: purple;
-      left: -450px;
-    }
-    .silhouette5 {
-      position: absolute;
-      width: 1000px;
-      height: 100%;
-      aspect-ratio: 1-1;
-      background-color: lightgreen;
-      left: -600px;
-    }
+.silhouette1, .silhouette2, .silhouette3, .silhouette4, .silhouette5 {
+  width: 1000px;
+  height: 100%;
+  position: absolute;
+}
+
+.silhouette1 {
+  background-color: red;
+  z-index: 5;
+  left: -250px;;
+}
+
+.silhouette2 {
+  background-color: green;
+  z-index: 4;
+}
+
+.silhouette3 {
+  background-color: blue;
+  z-index: 3;
+  left: 250px;
+}
+
+.silhouette4 {
+  background-color: orange;
+  z-index: 2;
+  left: 500px;
+}
+
+.silhouette5 {
+  background-color: purple;
+  z-index: 1;
+  left: 750px;
+}
   </style>
 </head>
 <body class="back">
-  <div class="silhouette1"></div>
-  <div class="silhouette2"></div>
-  <div class="silhouette3"></div>
-  <div class="silhouette4"></div>
-  <div class="silhouette5"></div>
+  <div class="silhouetteContainer">
+    <div class="silhouette1"></div>
+    <div class="silhouette2"></div>
+    <div class="silhouette3"></div>
+    <div class="silhouette4"></div>
+    <div class="silhouette5"></div>
+
+  </div>
 
   <script>
     function transformScroll(event) {
