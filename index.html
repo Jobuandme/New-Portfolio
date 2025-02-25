@@ -1,5 +1,18 @@
 <!DOCTYPE html>
 <html lang="eng-ca">
+    <script>
+    function transformScroll(event) {
+    if (!event.deltaY) {
+      return;
+    }
+
+    event.currentTarget.scrollLeft += event.deltaY + event.deltaX;
+    event.preventDefault();
+    }
+
+    const element = document.scrollingElement || document.documentElement;
+    element.addEventListener('wheel', transformScroll);
+  </script>
 <head>
   <meta charset="utc-8">
     <title>Michael Gvozdek's Portfolio</title>
